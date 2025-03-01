@@ -4,6 +4,8 @@ namespace LMS.Models
 {
     public class Category
     {
+        //test mostafa
+
         [Key]
         public int Id { get; set; }
 
