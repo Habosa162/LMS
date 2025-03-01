@@ -17,6 +17,8 @@
 
   <ItemGroup>
     <Folder Include="Models\InstractourModel\" />
+    <Folder Include="Repository\Interfaces\" />
+    <Folder Include="Repository\Classes\" />
   </ItemGroup>
 
 </Project>
