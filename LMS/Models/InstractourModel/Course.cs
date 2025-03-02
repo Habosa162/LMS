@@ -37,6 +37,7 @@ namespace LMS.Models.InstractourModel
 
         public Category Category { get; set; }
         public AppUser Instructor { get; set; }
+        public ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();
         public ICollection<Chapter> Chapters { get; set; } = new List<Chapter>();
         public ICollection<StudentEnrollCourse> StudentEnrollments { get; set; } = new List<StudentEnrollCourse>();
         public ICollection<Purchase> Purchases { get; set; } = new List<Purchase>();
