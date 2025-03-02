@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using LMS.Models.StudentModels;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -30,12 +31,14 @@ namespace LMS.Models.InstractourModel
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
         
-        [ForeignKey("Teacher")]
-        public int TeacherId { get; set; }
+        [ForeignKey("Instructor")]
+        public int InstructorId { get; set; }
 
 
         public Category Category { get; set; }
-        public AppUser Teacher { get; set; }
-        public ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();
+        public AppUser Instructor { get; set; }
+        public ICollection<Chapter> Chapters { get; set; } = new List<Chapter>();
+        public ICollection<StudentEnrollCourse> StudentEnrollments { get; set; } = new List<StudentEnrollCourse>();
+        public ICollection<Purchase> Purchases { get; set; } = new List<Purchase>();
     }
 }

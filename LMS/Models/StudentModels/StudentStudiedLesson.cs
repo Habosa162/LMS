@@ -9,16 +9,11 @@ namespace LMS.Models.StudentModels
         [Key]
         public int Id { get; set; }
 
-
-
-
         [ForeignKey("Student")]
         public int StudentId { get; set; }
         
         [ForeignKey("Lesson")]
         public int LessonId { get; set; }
-
-
 
         public AppUser Student { get; set; }
         public Lesson Lesson { get; set; }

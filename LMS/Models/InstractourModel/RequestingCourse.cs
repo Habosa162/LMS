@@ -17,8 +17,5 @@ namespace LMS.Models.InstractourModel
         public int RequestedCourseId { get; set; }
         public Course RequestedCourse { get; set; }
 
-
-
-
     }
 }
