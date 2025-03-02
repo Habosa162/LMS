@@ -10,7 +10,7 @@ namespace LMS.Models.StudentModels
             public int Id { get; set; }
 
             [ForeignKey("Student")]
-            public int StudentId { get; set; }
+            public string StudentId { get; set; }
             public AppUser Student { get; set; }
 
             [ForeignKey("Course")]

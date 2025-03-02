@@ -15,7 +15,7 @@ namespace LMS.Models.StudentModels
 
         [ForeignKey("Student")]
 
-        public int StudentId { get; set; }
+        public string StudentId { get; set; }
         public AppUser Student { get; set; }
 
         [Required]

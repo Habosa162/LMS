@@ -32,7 +32,7 @@ namespace LMS.Models.InstractourModel
         public int CategoryId { get; set; }
         
         [ForeignKey("Instructor")]
-        public int InstructorId { get; set; }
+        public string InstructorId { get; set; }
 
 
         public Category Category { get; set; }

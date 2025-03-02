@@ -9,9 +9,11 @@ namespace LMS.Models.InstractourModel
         public int Id { get; set; }
 
 
-        [ForeignKey("Course")]
-        public int CourseId { get; set; }
-        public Course Course { get; set; }
+        [ForeignKey("Instructor")]
+        public string InstructorID { get; set; }
+        public AppUser Instructor { get; set; }
+
+
 
         [ForeignKey("RequestedCourse")]
         public int RequestedCourseId { get; set; }
