@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace LMS.Models
+namespace LMS.Models.InstractourModel
 {
     public class Lesson
     {
@@ -12,13 +12,17 @@ namespace LMS.Models
         public string Name { get; set; }
 
         [Required]
-        public TimeSpan Duration { get; set; }
+        public TimeSpan Duration { get; set;}
 
         [Required]
         public string MediaLink { get; set; }
+        public bool IsDeleted { get; set; } = false; 
 
-        [ForeignKey("Course")]
-        public int CourseId { get; set; }
-        public Course Course { get; set; }
+
+        [ForeignKey("Chapter")]
+        public int ChapterID { get; set; }
+        public Chapter Chapter { get; set; }
+
+        
     }
 }

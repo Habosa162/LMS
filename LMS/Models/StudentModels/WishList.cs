@@ -1,12 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using LMS.Models.InstractourModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LMS.Models
+namespace LMS.Models.StudentModels
 {
     public class WishList
     {
 
-        [Key] 
+        [Key]
         public int Id { get; set; }
 
         [ForeignKey("Student")]

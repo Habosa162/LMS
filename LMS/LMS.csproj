@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-LMS-9440514d-1081-4547-8282-0e9e1c004fcc</UserSecretsId>
   </PropertyGroup>
@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\InstractourModel\" />
     <Folder Include="Repository\Interfaces\" />
     <Folder Include="Repository\Classes\" />
   </ItemGroup>
