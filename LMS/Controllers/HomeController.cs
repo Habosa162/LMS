@@ -6,9 +6,7 @@ namespace LMS.Controllers
 {
     public class HomeController : Controller
     {
-        /// <summary>
-        /// TRYING GIT CLONE
-        /// </summary>
+       
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
