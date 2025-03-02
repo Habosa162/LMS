@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LMS.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class initMigrateModels : Migration
+    public partial class initModels : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "Name",
+                name: "ProfileImg",
                 table: "AspNetUsers",
                 type: "nvarchar(max)",
                 nullable: true);
@@ -232,7 +232,7 @@ namespace LMS.Data.Migrations
                 name: "Category");
 
             migrationBuilder.DropColumn(
-                name: "Name",
+                name: "ProfileImg",
                 table: "AspNetUsers");
         }
     }
