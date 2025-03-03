@@ -1,0 +1,29 @@
+﻿
+
+
+
+@page
+@model LMS.Areas.Identity.Pages.Account.RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Confirm Registration";
+}
+
+<h2>Confirm Registration</h2>
+
+<p>Email: @Model.Email</p>
+
+<form method="post">
+    <div class="form-group">
+        <label for="SelectedRole">Select Role:</label>
+        <select asp-for="SelectedRole"  class="form-control">
+            <option value="">-- Select Role --</option>
+            <option value="Student">-- Student --</option>
+            <option value="Instructor">-- Instructor --</option>
+
+
+        </select>
+    </div>
+ 
+    <button type="submit" class="btn btn-primary mt-2">Confirm Role</button>
+</form>
+

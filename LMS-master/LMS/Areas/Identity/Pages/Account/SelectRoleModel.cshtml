@@ -1,0 +1,16 @@
+﻿@page
+@model LMS.Areas.Identity.Pages.Account.SelectRoleModel
+@{
+    ViewData["Title"] = "Select Role";
+}
+
+<h2>Select Your Role</h2>
+<form method="post">
+    <label>
+        <input type="radio" name="SelectedRole" value="Student" required> Student
+    </label>
+    <label>
+        <input type="radio" name="SelectedRole" value="Instructor"> Instructor
+    </label>
+    <button type="submit">Continue</button>
+</form>
