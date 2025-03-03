@@ -35,6 +35,13 @@ namespace LMS
 
             });
 
+            builder.Services.AddAuthentication().AddGoogle(opt =>
+            {
+                opt.ClientId = "59708267604-997gbks0odphsdki4rupm5n17itjoesu.apps.googleusercontent.com";
+                opt.ClientSecret = "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";
+                
+
+            });
 
 
 
