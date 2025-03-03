@@ -61,26 +61,7 @@ namespace LMS.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Chapter",
-                columns: table => new
-                {
-                    ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CourseID = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Chapter", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_Chapter_Course_CourseID",
-                        column: x => x.CourseID,
-                        principalTable: "Course",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
+           
 
             migrationBuilder.CreateTable(
                 name: "Purchase",
@@ -164,10 +145,7 @@ namespace LMS.Data.Migrations
                         principalColumn: "Id");
                 });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Chapter_CourseID",
-                table: "Chapter",
-                column: "CourseID");
+            
 
             migrationBuilder.CreateIndex(
                 name: "IX_Course_CategoryId",

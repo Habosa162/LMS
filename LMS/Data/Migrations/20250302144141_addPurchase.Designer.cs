@@ -4,6 +4,7 @@ using LMS.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LMS.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250302144141_addPurchase")]
+    partial class addPurchase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -267,36 +270,6 @@ namespace LMS.Data.Migrations
                     b.ToTable("Certificates");
                 });
 
-            modelBuilder.Entity("LMS.Models.StudentModels.Note", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("LessonId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("StudentId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("LessonId");
-
-                    b.HasIndex("StudentId");
-
-                    b.ToTable("Notes");
-                });
-
             modelBuilder.Entity("LMS.Models.StudentModels.Purchase", b =>
                 {
                     b.Property<int>("Id")
@@ -382,7 +355,7 @@ namespace LMS.Data.Migrations
 
                     b.HasIndex("StudentId");
 
-                    b.ToTable("studentEnrollCourses");
+                    b.ToTable("StudentEnrollCourse");
                 });
 
             modelBuilder.Entity("LMS.Models.StudentModels.StudentStudiedLesson", b =>
@@ -641,23 +614,6 @@ namespace LMS.Data.Migrations
                         .HasForeignKey("StudentId");
 
                     b.Navigation("Course");
-
-                    b.Navigation("Student");
-                });
-
-            modelBuilder.Entity("LMS.Models.StudentModels.Note", b =>
-                {
-                    b.HasOne("LMS.Models.InstractourModel.Lesson", "Lesson")
-                        .WithMany()
-                        .HasForeignKey("LessonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("LMS.Models.AppUser", "Student")
-                        .WithMany()
-                        .HasForeignKey("StudentId");
-
-                    b.Navigation("Lesson");
 
                     b.Navigation("Student");
                 });
